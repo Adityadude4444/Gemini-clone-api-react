@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply font-outfit; /* This applies the Outfit font to the body */
+}
+
+/* Your gradient class remains here */
+.text-gradient {
+  background: linear-gradient(to right, #4b90ff, #ff5546);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
