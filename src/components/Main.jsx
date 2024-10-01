@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-
+import geminiIcon from '../assets/gemini_icon.png';
 import { Context } from '../context/Context';
 import Input from './input';
 
@@ -10,6 +10,7 @@ function Main() {
     result,
     showresult,
     loading,
+    recentprop,
     onSent,
   } = useContext(Context);
 
@@ -53,8 +54,14 @@ function Main() {
         </div>
       ) : (
         <div className='p-9 px-[15%] flex flex-col max-w-5xl'>
-
-          {loading ? <p>Loading...</p> : <p>{result}</p>}
+          <div className='p-8 flex gap-5 items-center'><i className="fa-solid fa-user"></i> {recentprop}</div>
+          {loading ?
+            <div className='flex p-6'><img src={geminiIcon} className='max-h-10'/><div className='flex flex-col w-full gap-3'><div className='w-full bg-gradient-to-r from-[#9ed7ff] via-transparent to-[#9ed7ff] p-2'></div>
+            <div className='w-full bg-gradient-to-r from-[#9ed7ff] via-transparent to-[#9ed7ff] p-2'></div>
+            <div className='w-full bg-gradient-to-r from-[#9ed7ff] via-transparent to-[#9ed7ff] p-2'></div>
+            <div className='w-full bg-gradient-to-r from-[#9ed7ff] via-transparent to-[#9ed7ff] p-2'></div></div>
+            
+          </div> : <div className='p-6 flex gap-3'><img src={geminiIcon} className='max-h-10'/>{result}</div>}
         </div>
       )}
       

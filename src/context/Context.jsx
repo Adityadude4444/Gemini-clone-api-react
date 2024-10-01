@@ -16,12 +16,14 @@ const ContextProvider = (props) => {
 
     setloading(true);
     setresult("");
-    setshowresult(false);
+    setshowresult(true);
+    setrecentprop(prop)
 
     try {
       const response = await run(prompt);
-      setresult(response); 
-      setshowresult(true);
+      setresult(response);
+      
+
     } catch (error) {
       console.error(error);
       setresult("An error occurred.");

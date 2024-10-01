@@ -10,7 +10,7 @@ function Input() {
       } = useContext(Context);
   return (
     <div className='fixed bottom-0 left-0 w-full px-[15%] '>
-        <div className="border rounded-full p-5 w-full flex justify-between items-center">
+        <div className="border rounded-full p-5 w-full flex justify-between items-center bg-white">
           <input
             type="text"
             placeholder="Enter prompt"
