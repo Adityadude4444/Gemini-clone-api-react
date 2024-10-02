@@ -11,25 +11,39 @@ const ContextProvider = (props) => {
   const [showresult, setshowresult] = useState(false);
   const [loading, setloading] = useState(false);
 
+  const formatResult = (text) => {
+    return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  };
+  const alreadyloaded = async (prompt) => {
+      const response = await run(prompt);
+      const formattedResult = formatResult(response);
+      setshowresult(true)
+      setresult(formattedResult);
+      
+  }
+
+
   const onSent = async (prompt) => {
     if (!prompt.trim()) return;
 
     setloading(true);
     setresult("");
     setshowresult(true);
-    setrecentprop(prop)
+    setrecentprop(prop);
+    setprevprop(prev=>[...prev,prop])
 
     try {
       const response = await run(prompt);
-      setresult(response);
-      
+      const formattedResult = formatResult(response);
+      setresult(formattedResult);
+      console.log(prevprop)
 
     } catch (error) {
       console.error(error);
       setresult("An error occurred.");
       setshowresult(true);
     } finally {
-      setloading(false); 
+      setloading(false);
       setprop(""); 
     }
   };
@@ -46,6 +60,7 @@ const ContextProvider = (props) => {
     showresult,
     loading,
     onSent,
+    alreadyloaded,setshowresult
   };
 
   return (

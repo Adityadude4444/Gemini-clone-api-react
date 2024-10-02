@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import Sidebar from "./components/Sidebar";
-import Main from './components/Main';
 import Layout from './components/Layout';
 
 export default function App() {

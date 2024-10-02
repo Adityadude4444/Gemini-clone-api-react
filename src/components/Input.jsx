@@ -9,7 +9,7 @@ function Input() {
         onSent,
       } = useContext(Context);
   return (
-    <div className='fixed bottom-0 left-0 w-full px-[15%] '>
+    <div className='bottom-3 left-0 w-full px-[15%] ml-8 fixed'>
         <div className="border rounded-full p-5 w-full flex justify-between items-center bg-white">
           <input
             type="text"
