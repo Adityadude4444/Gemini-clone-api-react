@@ -70,7 +70,7 @@ function Main() {
     <Input/>
       
     </div>
-  );
+  )
 }
 
 export default Main;
